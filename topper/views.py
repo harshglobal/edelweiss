@@ -3,7 +3,7 @@ from edelweiss.Edelweiss import Edelweiss
 import time
 # Create your views here.
 def home(request):
-    return render(request,"column.html")
+    return render(request,"advancedecline.html")
 
 def indices(request):
     q=Edelweiss()

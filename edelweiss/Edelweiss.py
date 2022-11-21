@@ -117,6 +117,3 @@ class Edelweiss:
         return self.post_("events",data)
        
 
-j = Edelweiss()
-data = j.deep_dive()
-print(data)

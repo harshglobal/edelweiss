@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Jumbotron -->
+    <div class="container" class='jumbotron'>
+      <h3 class="topheading">Global Market</h3>
+      <br>
+          <!-- row 1 start -->
+        <div class="row">
+            <!-- col 1-1 start-->
+          <div class="col">
+            <h4 class='asia'>Asia</h4>
+            <table>
+              <tr class='asia-th'>
+                <th>Country</th>
+                <th>Symbol</th>
+                <th>LastUpdate</th>
+                <th>%Change</th>
+                <th>Change</th>
+                <th>Isopen</th>
+
+              </tr>
+            {% for asia in asia_index %}
+              <tr class='asia-td'>
+                <td>{{asia.Coun}}</td>
+                <td>{{asia.IName}}</td>
+                <td id ='ltupdate'>{{asia.Date}}</td>
+                {% if asia.PChng > 0 %}
+                <td class = "green">
+                  {% else %}
+                <td class = "red">
+                  {% endif %}
+                {{asia.PChng}}</td>
+                <td>{{asia.Chng}}</td>
+                <td>{{asia.IsOpen}}</td>
+
+              </tr>
+            {% endfor %}
+            </table>
+          </div>
+            <!-- col 1-1 end -->
+
+             <!-- col 1-2 start -->
+            <div class="col">
+              <h4 class='eur'>Europe-America</h4>
+              <table>
+                <tr class='eur-th'>
+                  <th>Country</th>
+                  <th>Symbol</th>
+                  <th>LastUpdate</th>
+                  <th>%Change</th>
+                  <th>Change</th>
+                  <th>Isopen</th>
+  
+                </tr>
+              {% for eur in eur_index %}
+                <tr class='eur-td'>
+                  <td>{{eur.Coun}}</td>
+                  <td>{{eur.IName}}</td>
+                  <td id ='ltupdate'>{{eur.Date}}</td>
+                  {% if eur.PChng > 0 %}
+                  <td class = "green">
+                    {% else %}
+                  <td class = "red">
+                    {% endif %}
+                  {{eur.PChng}}</td>
+                  <td>{{eur.Chng}}</td>
+                  <td>{{eur.IsOpen}}</td>
+                </tr>
+              {% endfor %}
+              </table>
+            </div>
+              <!-- col 1-2 end -->
+        </div>
+          
+        <!-- row2 end -->
+    </div>
+<!-- Jumbotron end here -->
+{% endblock %}
+    
+  </body>
+</html>

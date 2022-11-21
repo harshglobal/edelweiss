@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <div class="container" class='jumbotron'>
+      <h3 class="topheading">Indices</h3>
+      <br>
+      <div class="row">
+      
+        <div class="col">
+          <h4 class='nse'>NSE</h4>
+          <table>
+            <tr class='nse-th'>
+              <th>Symbol</th>
+              <th>ltp</th>
+              <th>%Change</th>
+              <th>Change</th>
+              <th>High</th>
+              <th>Low</th>
+            </tr>
+            {% for nse in nse_index %}
+            <tr class='nse-td'>
+              <td>{{nse.IName}}</td>
+              <td>{{nse.LTP}}</td>
+              {% if nse.PChng > 0 %}
+              <td class = "green">
+                {% else %}
+              <td class = "red">
+                {% endif %}
+              {{nse.PChng}}</td>
+              <td>{{nse.Chng}}</td>
+              <td>{{nse.High}}</td>
+              <td>{{nse.Low}}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+        <div class="col">
+          <h4 class='bse'>BSE</h4>
+          <table>
+            <tr class='bse-th'>
+              <th>Symbol</th>
+              <th>ltp</th>
+              <th>%Change</th>
+              <th>Change</th>
+              <th>High</th>
+              <th>Low</th>
+            </tr>
+          {% for bse in bse_index %}
+            <tr class='bse-td'>
+              <td>{{bse.IName}}</td>
+              <td>{{bse.LTP}}</td>
+              {% if bse.PChng > 0 %}
+              <td class = "green">
+                {% else %}
+              <td class = "red">
+                {% endif %}
+              {{bse.PChng}}</td>
+              <td>{{bse.Chng}}</td>
+              <td>{{bse.High}}</td>
+              <td>{{bse.Low}}</td>
+            </tr>
+          {% endfor %}
+          </table>
+        </div>
+      </div>
+    <br>
+      
+    </div>
+{% endblock %}
+
+  </body>
+</html>

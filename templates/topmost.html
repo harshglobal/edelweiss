@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <div class="container" class='jumbotron'>
+      <h3 class='topheading'>Active Stocks</h3>
+      <br>
+      <div class="row align-items-center">
+        <div class="col">
+          <h4 class='active'>Most Active</h4>
+          <table>
+            <tr class='active-th'>
+              <th>Symbol</th>
+              <th>ltp</th>
+              <th>%Change</th>
+              <th>Change</th>
+              <th>Volume</th>
+            </tr>
+            {% for active in active_stocks %}
+            <tr class='active-td'>
+              <td>{{active.SName}}</td>
+              <td>{{active.LTP}}</td>
+              <td>{{active.PChng}}</td>
+              <td>{{active.Chng}}</td>
+              <td>{{active.Vlm}}</td>
+            </tr>
+          {% endfor %}
+          </table>
+        </div>
+
+        <div class="col">
+          <h4 class='gainer'>Top Gainers</h4>
+          <table>
+            <tr class='gainer-th'>
+              <th>Symbol</th>
+              <th>ltp</th>
+              <th>%Change</th>
+              <th>Change</th>
+              <th>Volume</th>
+            </tr>
+            {% for gainer in gainers_stocks %}
+            <tr class='gainer-td'>
+              <td>{{gainer.SName}}</td>
+              <td>{{gainer.LTP}}</td>
+              <td>{{gainer.PChng}}</td>
+              <td>{{gainer.Chng}}</td>
+              <td>{{gainer.Vlm}}</td>
+            </tr>
+          {% endfor %}
+          </table>
+        </div>
+        <div class="col">
+          <h4 class='looser'>Top Loosers</h4>
+          <table>
+            <tr class='looser-th'>
+              <th>Symbol</th>
+              <th>ltp</th>
+              <th>%Change</th>
+              <th>Change</th>
+              <th>Volume</th>
+            </tr>
+            {% for looser in losers_stocks %}
+            <tr class='loosers-td'>
+              <td>{{looser.SName}}</td>
+              <td>{{looser.LTP}}</td>
+              <td>{{looser.PChng}}</td>
+              <td>{{looser.Chng}}</td>
+              <td>{{looser.Vlm}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+
+      </div>
+    <br>
+    </div>
+      {% endblock %}
+
+  </body>
+</html>

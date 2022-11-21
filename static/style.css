@@ -17,19 +17,23 @@ color:white;
 text-align: center;
 }
 
-.nse-th th{
+.nse-th th {
 padding: 10px;
 background:aqua;
 }
-.nse-td td{
+.nse-td td {
 padding: 3px 4px;
 }
 .bse-th th {
 padding: 10px;
 background:lightpink;
-
 }
-.eur-td td{
+
+.bse-td td {
+padding: 3px 4px;
+}
+
+.eur-td td {
 padding: 2.5px 3px;
 }
 
@@ -39,7 +43,7 @@ background:lightpink;
 
 }
 
-.asia-td td{
+.asia-td td {
 padding: 4.7px 3px;
 }
 

@@ -26,7 +26,7 @@ def advdec(request):
     q=Edelweiss()
     adv_nse = q.advance_decline_nse()
     time.sleep(0.5)
-    adv_bse = q.advance_decline_nse()     
+    adv_bse = q.advance_decline_bse()     
     data = {'adv_nse':adv_nse,'adv_bse':adv_bse}
     return render(request,'advancedecline.html',data)
 

@@ -1,70 +1,50 @@
 {% extends 'base.html' %}
 {% block content %}
-<!-- Jumbotron -->
-    <div class="container" class='jumbotron'>
-      <h3 class="topheading">Advance-Decline</h3>
-      <br>
-          <!-- row 1 start -->
-        <div class="row">
-            <!-- col 1-1 start-->
-          <div class="col" align="center">
-            <h4>NSE</h4>
-            <table>
-              <tr class = 'nse-adv-th'>
-                <th>Index</th>
-                <th>Advance</th>
-                <th>Decline</th>
-                <th>Neutral</th>
-              </tr>
-            {% for adv_n in adv_nse %}
-              <tr  class= 'nse-adv-td'>
-                {% if adv_n.a > adv_n.d  %}
-                <td class = "green">
-                  {% else %}
-                <td class = "red">
-                  {% endif %}
-                  {{adv_n.dpName}}</td>
-                <td>{{adv_n.a}}</td>
-                <td>{{adv_n.d}}</td>
-                <td>{{adv_n.n}}</td>
-              </tr>
-            {% endfor %}
-            </table>
-          </div>
-            <!-- col 1-1 end -->
-
-             <!-- col 1-2 start -->
-             <div class="col" align="center">
-              <h4>BSE</h4>
-              <table>
-                <tr class = 'bse-adv-th'>
-                  <th>Index</th>
-                  <th>Advance</th>
-                  <th>Decline</th>
-                  <th>Neutral</th>
-                </tr>
-              {% for adv_b in adv_bse %}
-                <tr class = 'bse-adv-td'>
-                  {% if adv_b.a > adv_b.d  %}
-                  <td class = "green">
-                    {% else %}
-                  <td class = "red">
-                    {% endif %}
-                    {{adv_b.dpName}}</td>
-                  <td>{{adv_b.a}}</td>
-                  <td>{{adv_b.d}}</td>
-                  <td>{{adv_b.n}}</td>
-                </tr>
-              {% endfor %}
-              </table>
-            </div>
-              <!-- col 1-2 end -->
-        </div>
-          
-        <!-- row2 end -->
+<div class="container" class='jumbotron'>
+  <h3 class="topheading">Advance-Decline</h3>
+  <br>
+  <div class="row">
+    <!-- col 1-1 start-->
+    <div class="col-md-6">
+    <h4>NSE</h4>
+      <table class ='table'>
+        <thead class="table-danger">
+          <th>Index</th>
+          <th>Advance</th>
+          <th>Decline</th>
+          <th>Neutral</th>
+        </thead>
+        {% for adv_n in adv_nse %}
+        <tbody>
+          <td>{{adv_n.dpName}}</td>
+          <td>{{adv_n.a}}</td>
+          <td>{{adv_n.d}}</td>
+          <td>{{adv_n.n}}</td>
+        </tbody>
+        {% endfor %}
+      </table>
     </div>
-<!-- Jumbotron end here -->
+    <!-- col 1-1 start-->
+    <div class="col-md-6">
+      <h4>BSE</h4>
+      <table class ='table'>
+        <thead class="table-success">
+          <th>Index</th>
+          <th>Advance</th>
+          <th>Decline</th>
+          <th>Neutral</th>
+        </thead>
+        {% for adv_b in adv_bse %}
+        <tbody>
+          <td>{{adv_b.dpName}}</td>
+          <td>{{adv_b.a}}</td>
+          <td>{{adv_b.d}}</td>
+          <td>{{adv_b.n}}</td>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
 {% endblock %}
-    
-  </body>
-</html>
+

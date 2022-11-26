@@ -5,6 +5,7 @@ from topper import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("",views.indices,name='home'),
     path("indices/",views.indices,name='indices'),
     path("globals/",views.globals,name='globals'),
     path("advdec/",views.advdec,name='advdec'),

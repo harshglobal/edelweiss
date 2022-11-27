@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['harshged.herokuapp.com','127.0.0.1','harshgawande.herokuapp.com','tradingview.com','s3.tradingview.com']
 
-CSRF_TRUSTED_ORIGINS=['harshged.herokuapp.com','127.0.0.1','harshgawande.herokuapp.com','tradingview.com','s3.tradingview.com']
+CSRF_TRUSTED_ORIGINS=['https://harshged.herokuapp.com','127.0.0.1','https://harshgawande.herokuapp.com','tradingview.com','s3.tradingview.com']
 # Application definition
 
 INSTALLED_APPS = [

@@ -1,10 +1,44 @@
 from django.shortcuts import render,HttpResponse
 from edelweiss.Edelweiss import Edelweiss
+from topper.models import InsertSymbols
+from topper.forms import DropdownForm
+import csv as CV
 import time
 # Create your views here.
-def home(request):
-    return render(request,"advancedecline.html")
+# def home(request):
+#     form = DropdownForm()
+#     symbols = InsertSymbols.objects.all()
+#     selected ='None'
+#     if request.method == 'POST':
+#         form = DropdownForm(request.POST)
 
+#         if form.is_valid():
+#             selected = DropdownForm.cleaned_data['select_box']
+#             return render(request,"index.html")
+#     print("selected:::",selected)
+    
+    # return render(request,"index.html",{'data':symbols,'selected':selected})
+# def home(request):  
+#     sym =InsertSymbols.objects.all() 
+#     return render (request,'index3.html',{'data':sym})
+def home(request): 
+    sym =InsertSymbols.objects.all()
+    sel =None
+    if request.method == 'POST':
+        sel = request.POST['select_box']
+    return render (request,'index.html',{'data':sym,'sel':sel})
+
+def csv(request):
+    path = r'C:\Users\harsh\Dropbox\Python\Django\Deployment\nse\edelweiss\media\CSV\preopen.csv'
+    with open(path) as f:
+        reader = CV.reader(f)
+        for i, row in enumerate(reader):
+            if i>9:
+                symbol = InsertSymbols.objects.get_or_create(symbol=row[0],)
+            
+    return render (request,'excel.html')
+    
+  
 def indices(request):
     q=Edelweiss()
     oc = q.market_indices()

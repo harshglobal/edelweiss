@@ -5,11 +5,16 @@ from topper import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",views.indices,name='home'),
+    path("",views.home,name='home'),
     path("indices/",views.indices,name='indices'),
     path("globals/",views.globals,name='globals'),
     path("advdec/",views.advdec,name='advdec'),
     path("topmost/",views.topmost,name='topmost'),
 
-    path("",views.home)
+    path('excel/',views.csv,name="downloadexcel"),
+
+ 
+
+
+
 ]

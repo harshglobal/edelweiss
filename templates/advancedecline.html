@@ -16,10 +16,16 @@
         </thead>
         {% for adv_n in adv_nse %}
         <tbody>
-          <td>{{adv_n.dpName}}</td>
+          {% if adv_n.a > adv_n.d %}
+          <td class='text-success'>
+          {% else %}
+          <td class = 'text-danger'>
+          {% endif %}
+          {{adv_n.dpName}}</td>
           <td>{{adv_n.a}}</td>
           <td>{{adv_n.d}}</td>
           <td>{{adv_n.n}}</td>
+          
         </tbody>
         {% endfor %}
       </table>
@@ -36,7 +42,12 @@
         </thead>
         {% for adv_b in adv_bse %}
         <tbody>
-          <td>{{adv_b.dpName}}</td>
+          {% if adv_b.a > adv_b.d %}
+          <td class='text-success'>
+          {% else %}
+          <td class = 'text-danger'>
+          {% endif %}
+          {{adv_b.dpName}}</td>
           <td>{{adv_b.a}}</td>
           <td>{{adv_b.d}}</td>
           <td>{{adv_b.n}}</td>

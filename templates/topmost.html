@@ -17,7 +17,12 @@
         </thead>
         {% for active in active_stocks %}
         <tbody>
-          <td>{{active.SName}}</td>
+          {% if active.PChng > 0 %}
+          <td class='text-success'>
+          {% else %}
+          <td class = 'text-danger'>
+          {% endif %}
+          {{active.SName}}</td>
           <td>{{active.LTP}}</td>
           <td>{{active.PChng}}</td>
           <td>{{active.Chng}}</td>

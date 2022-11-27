@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['harshged.herokuapp.com','127.0.0.1','harshgawande.herokuapp.com','tradingview.com','s3.tradingview.com']
 
-CSRF_TRUSTED_ORIGINS=['https://harshged.herokuapp.com','127.0.0.1','https://harshgawande.herokuapp.com','tradingview.com','s3.tradingview.com']
+CSRF_TRUSTED_ORIGINS=['https://harshged.herokuapp.com','http://127.0.0.1','https://harshgawande.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
@@ -123,6 +123,10 @@ STATIC_URL = '/static/'
 
     
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+   
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

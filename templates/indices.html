@@ -20,12 +20,19 @@
             </thead>
             <tbody>
               {% for nse in nse_index %}
+              {% if nse.PChng > 0 %}
+              <tr class='text-success'>
+              {% else %}
+              <tr class = 'text-danger'>
+              {% endif %}
+
               <td>{{nse.IName}}</td>
               <td>{{nse.LTP}}</td>
               <td>{{nse.PChng}}</td>
               <td>{{nse.Chng}}</td>
               <td>{{nse.High}}</td>
               <td>{{nse.Low}}</td>
+              </tr>
               </tbody>
               {% endfor %}
             </table>
@@ -45,12 +52,19 @@
             </thead>
             <tbody>
               {% for bse in bse_index %}
+            
+              {% if bse.PChng > 0 %}
+              <tr class='text-success'>
+              {% else %}
+              <tr class = 'text-danger'>
+              {% endif %}
               <td>{{bse.IName}}</td>
               <td>{{bse.LTP}}</td>
               <td>{{bse.PChng}}</td>
               <td>{{bse.Chng}}</td>
               <td>{{bse.High}}</td>
               <td>{{bse.Low}}</td>
+              </tr>
             </tbody>
             {% endfor %}
           </table>

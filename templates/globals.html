@@ -20,7 +20,12 @@
             </thead>
             {% for asia in asia_index %}
             <tbody>
-                <td>{{asia.Coun}}</td>
+              {% if asia.PChng > 0 %}
+              <td class='text-success'>
+              {% else %}
+              <td class = 'text-danger'>
+              {% endif %}
+                {{asia.Coun}}</td>
                 <td>{{asia.IName}}</td>
                 <td id ='ltupdate'>{{asia.Date}}</td>
                 <td>{{asia.PChng}}</td>
@@ -45,7 +50,12 @@
             </thead>
             <tbody>
               {% for eur in eur_index %}
-              <td>{{eur.Coun}}</td>
+              {% if eur.PChng > 0 %}
+              <td class='text-success'>
+              {% else %}
+              <td class = 'text-danger'>
+              {% endif %}
+              {{eur.Coun}}</td>
               <td>{{eur.IName}}</td>
               <td id ='ltupdate'>{{eur.Date}}</td>
               <td>{{eur.PChng}}</td>

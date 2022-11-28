@@ -105,6 +105,17 @@
         <div class="col-md-3">&nbsp;</div>
     </div>
     <br>
+
+  <!-- search box script -->
+    <script>
+
+      var select_box_element = document.querySelector('#select_box');
+  
+      dselect(select_box_element, {
+          search: true
+      });
+  
+  </script>
 <!-- TradingView Widget BEGIN -->
 <div class="row">
     <div class='col-lg-10 offset-1'>
@@ -170,15 +181,7 @@
 </div>
 </div>
   <!-- TradingView Widget END -->
-  <script>
 
-    var select_box_element = document.querySelector('#select_box');
-
-    dselect(select_box_element, {
-        search: true
-    });
-
-</script>
 <div class="container mycontainer">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">

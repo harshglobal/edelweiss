@@ -23,7 +23,7 @@ import time
 #     return render (request,'index3.html',{'data':sym})
 def home(request): 
     sym =InsertSymbols.objects.all()
-    sel =None
+    sel ="HDFCBANK"
     if request.method == 'POST':
         sel = request.POST['select_box']
     return render (request,'index.html',{'data':sym,'sel':sel})

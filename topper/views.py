@@ -4,6 +4,8 @@ from topper.models import InsertSymbols
 from topper.forms import DropdownForm
 import csv as CV
 import time
+
+
 # Create your views here.
 # def home(request):
 #     form = DropdownForm()

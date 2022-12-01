@@ -69,6 +69,10 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'topmost' %}">Active</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news/1">
+              <span class="badge bg-danger">News</span></a>
+            </li>
             {% comment %} <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown link
@@ -85,10 +89,16 @@
     </nav>
 <!-- Nav end here-->
 
+<div class='container'>
+  <div class='row'>
+      <div class='col'>
+  
+        {% block content %}
+      {% endblock %}
 
-
-{% block content %}
-{% endblock %}
+    </div>
+  </div>
+</div>
 
 
 

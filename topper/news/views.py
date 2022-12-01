@@ -19,7 +19,7 @@ def mynews(request,id):
         text = div.h2.a.text
         img=div.div.a.img['src']
         try:
-            time = daman.span.em.span.text
+            time = daman.span.em.span.text[:5]+' ago'
         except AttributeError as e:
             time = ""
 

@@ -9,5 +9,7 @@ class InsertSymbols(models.Model):
     exchange = models.CharField(max_length=50,default='NSE')
     upload = models.FileField(upload_to ='CSV/',blank=True,null=True)
 
+    class Meta:
+         ordering = ['symbol']
     def __str__(self):
         return self.symbol

@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-^xr&zg=&_#or^)(k=q+_&7ph#(m7d^u16-5@t4ovti8xp68jrk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['harshged.herokuapp.com','127.0.0.1','harshgawande.herokuapp.com','tradingview.com','s3.tradingview.com']
+ALLOWED_HOSTS = ['harshglobal.pythonanywhere.com','127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS=['https://harshged.herokuapp.com','http://127.0.0.1','https://harshgawande.herokuapp.com']
+CSRF_TRUSTED_ORIGINS=['https://harshglobal.pythonanywhere.com','http://127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
